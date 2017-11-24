@@ -19,11 +19,6 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## Get Started
 
-### Installing
-
-```
-yarn add git+ssh://git@bitbucket.org:bindolabs/bindo-api-client.git
-```
 
 ### Example
 
@@ -51,10 +46,6 @@ client.main().login({
   password: 'password',
 })
 ```
-
-## Available Clients
-
-- main for https://trybindo.com/api/v2
 
 ## Interceptors
 
