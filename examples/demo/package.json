@@ -1,0 +1,9 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}

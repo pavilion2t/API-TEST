@@ -1,0 +1,51 @@
+{
+  "name": "bindo-api-client",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf lib && yarn build:docs",
+    "build:docs": "rm -rf docs && node_modules/.bin/jsdoc -c jsdoc.config.json -t node_modules/docdash",
+    "lint": "eslint src",
+    "test": "jest --watch",
+    "test-ci": "jest",
+    "test-pre-commit": "jest --lastCommit",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "jest --lastCommit",
+      "eslint src --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "^21.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "docdash": "^0.4.0",
+    "eslint": "^4.7.1",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsdoc": "^3.1.3",
+    "husky": "^0.14.3",
+    "jest": "^21.0.2",
+    "jest-fetch-mock": "^1.2.1",
+    "jsdoc": "^3.5.5",
+    "jsdoc-dash-template": "^2.0.1",
+    "lint-staged": "^4.2.3",
+    "regenerator-runtime": "^0.11.0",
+    "rollup": "^0.49.3",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "types": "./src/index.d.ts",
+  "jest": {
+    "setupFiles": [
+      "./jest-setup.js"
+    ],
+    "setupTestFrameworkScriptFile": "./jest-framework-setup.js",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/es2015-transform.js"
+    }
+  }
+}
